@@ -13,7 +13,9 @@ app.use(express.json());
 
 //routes
 const authRoutes = require("./src/routes/auth.routes");
+const { weatherRouter } = require("./src/routes/common.routes"); 
 app.use("/auth",authRoutes);
+app.use("/common", weatherRouter);
 
 //Mongoose DB connect
  mongoose.connect(process.env.MONGO_URI)
